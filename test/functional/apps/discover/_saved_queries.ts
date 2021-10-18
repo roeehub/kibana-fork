@@ -30,7 +30,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     log.debug('set up a query with filters to save');
     const from = 'Sep 20, 2015 @ 08:00:00.000';
     const to = 'Sep 21, 2015 @ 08:00:00.000';
-    await PageObjects.common.time({ from, to });
+    await PageObjects.common.setTime({ from, to });
     await PageObjects.common.navigateToApp('discover');
     await filterBar.addFilter('extension.raw', 'is one of', 'jpg');
     await queryBar.setQuery('response:200');
