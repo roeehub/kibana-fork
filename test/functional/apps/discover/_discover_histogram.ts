@@ -44,7 +44,7 @@ export default function ({ getService, getPageObjects }: FtrProviderContext) {
     });
 
     async function prepareTest(from: string, to: string, interval?: string) {
-      await PageObjects.common.time({ from, to });
+      await PageObjects.common.setTime({ from, to });
       await PageObjects.common.navigateToApp('discover');
       await PageObjects.discover.waitUntilSearchingHasFinished();
       if (interval) {
